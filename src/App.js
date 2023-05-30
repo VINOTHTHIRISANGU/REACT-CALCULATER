@@ -1,0 +1,69 @@
+
+import React,{useState} from 'react'; 
+import './App.css';
+// import Fun from'./components/Fun'
+// import Fun2 from'./components/Fun2'
+// import Class from'./components/Class'
+ //import Timers from'./components/Timers'
+function App() {
+  const[value ,setValue]=useState('');
+  return (
+    <div className="App">
+{/*<Fun/>
+  <Fun2/>
+  <Class/>
+     <Timers seconds={95}/>*/}
+    <div className='container'>
+      <div className='cal'>
+     
+      <form action=''>
+      <div className='display'>
+        <input type="text"  value={value}/>
+      </div>
+   
+      <div>
+      <input type="button" value="AC" onClick={e=>setValue('')}/> 
+      <input type="button" value="DE" onClick={e=>setValue( value.slice(0,-1))}/> 
+      <input type="button" value="." onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="/"onClick={e=>setValue( value+ e.target.value)}  /> 
+      </div>
+         
+      <div>
+      <input type="button" value="7" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="8" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="9" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="*" onClick={e=>setValue( value+ e.target.value)}  /> 
+      </div>
+         
+      <div>
+      <input type="button" value="4" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="5" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="6" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="+" onClick={e=>setValue( value+ e.target.value)} /> 
+      </div>
+      <div>
+      <input type="button" value="1" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="2" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="3" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="-" onClick={e=>setValue( value+ e.target.value)} /> 
+      </div>
+            
+      
+      <div>
+      <input type="button" value="00" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="0" onClick={e=>setValue( value+ e.target.value)} /> 
+      <input type="button" value="=" className='equal' onClick={e=>setValue(eval( value))}/> 
+     
+      </div>
+      
+      </form>
+      </div>
+      </div>
+    </div>
+ 
+  );
+}
+
+export default App;
+
+
